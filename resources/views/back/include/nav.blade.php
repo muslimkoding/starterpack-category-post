@@ -30,6 +30,7 @@
               {{-- @endif --}}
             </div>
           </a>
+          @auth
           <div class="dropdown-menu dropdown-menu-end pt-0">
             <div class="dropdown-header bg-body-tertiary text-body-secondary fw-semibold rounded-top mb-2"
               data-coreui-i18n="account">Account</div>
@@ -37,7 +38,7 @@
               <div class="icon me-2">
                 <i class="fa-solid fa-user-gear"></i>
 
-              </div><span>Darul</span>
+              </div><span>{{ auth()->user()->name }}</span>
             </a>
 
             <div class="dropdown-divider"></div>
@@ -48,11 +49,36 @@
                 <i class="fa-solid fa-arrow-right-from-bracket"></i>
               </div><span data-coreui-i18n="logout">Logout</span>
             </a>
-            <form id="logout-form" action="#logout" method="POST" class="d-none">
+            <form id="logout-form" action="/logout" method="POST" class="d-none">
               @csrf
             </form>
 
           </div>
+            @else
+            <div class="dropdown-menu dropdown-menu-end pt-0">
+              <div class="dropdown-header bg-body-tertiary text-body-secondary fw-semibold rounded-top mb-2"
+                data-coreui-i18n="account">Belum login</div>
+              <a class="dropdown-item" href="#user_profile">
+                <div class="icon me-2">
+                  <i class="fa-solid fa-user-gear"></i>
+  
+                </div><span>Darul</span>
+              </a>
+  
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="#logout"
+                onclick="event.preventDefault();
+                                                 document.getElementById('logout-form').submit();">
+                <div class="icon me-2">
+                  <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                </div><span data-coreui-i18n="logout">Logout</span>
+              </a>
+              <form id="logout-form" action="#logout" method="POST" class="d-none">
+                @csrf
+              </form>
+  
+            </div>
+          @endauth
         </li>
       </ul>
     </div>
