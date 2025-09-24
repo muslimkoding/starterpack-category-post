@@ -7,6 +7,18 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
+## Dependencies Yang Digunakan
+- PHP : Versi 8.2
+- Sweetalert2/Laravel : Versi 1.0
+- yajra/laravel-datatables-oracle : Versi 12.4
+
+## Vitur yang ada
+- Relasi database : Kategori & Post (One to Many - Kategori bisa memiliki banyak Post)
+- Pencarian isi data post
+- Filter berdasarkan kategori dan Status
+- Fitur paginasi
+- Fitur back ke halaman terakhir
+
 ## About Laravel
 
 Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
