@@ -18,6 +18,7 @@
 - Filter berdasarkan kategori dan Status
 - Fitur paginasi
 - Fitur back ke halaman terakhir
+- Authentication (Register dan Login)
 
 ## About Laravel
 
